@@ -72,7 +72,7 @@ a:hover{
           justify-content: space-around;
         }
         .ofertas{
-          width: 700px;
+          width: 45vw;
           flex: 0 2 33%;
           margin-top: 2px;
           cursor: pointer;
@@ -91,22 +91,30 @@ a:hover{
           margin:10px;
         }
         #produtos{
+          width: 100%;
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-around
+          justify-content: space-around;
         }
         #produtos > a > img{
-          width: 600px;
-          flex: 0 1 40%;
+          width: 45vw;
+          flex: 0 1 25%;
+          margin-right: 2px;
+        }
+        .img-resp{
+          width: 100%;
         }
         /*media query para tela home começa aqui*/
       @media(max-width:800px){
-      
+      .img-resp{
+        width: 50%;
+      }
         
         .ofertas img{
           width: 50%;
         }
         #produtos{
+
           justify-content: center;
           
          
