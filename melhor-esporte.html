@@ -91,7 +91,7 @@
           <div class="corra-com-dkmodas">
             <a href="#">
               <div>
-                <h3 class="per">-25%</h3>
+                <h3 class="per"></h3>
                 <h1 class="tenis"><img src="imagens/download.jpeg" alt="" width="130px" height="130px"></h1>
                 <h2 class="lancamento">Lançamento</h2>
                 <p class="nome-produto">Tênis nike revolution <br> 7 - Masculino</p>
@@ -102,7 +102,7 @@
             </a>
             <a href="#">
               <div>
-                <h3 class="per">-37%</h3>
+                <h3 class="per"></h3>
                 <h1 class="tenis"><img src="imagens/images.jpeg" alt="" width="130px" height="130px"></h1>
                 <h2 class="lancamento">Lançamento</h2>
                 <p class="nome-produto">Tênis mizuno wave dynasty 6 - Feminino</p>
@@ -114,7 +114,7 @@
             </a>
             <a href="#">
               <div>
-                <h3 class="per">-41%</h3>
+                <h3 class="per"></h3>
                 <h1 class="tenis"><img src="imagens/images (1).jpeg" alt="" width="130px" height="130px"></h1>
                 <h2 class="lancamento">Lançamento</h2>
                 <p class="nome-produto">Tênis adidas Liter <br> Racer 3.0 - Masculino</p>
@@ -126,7 +126,7 @@
             </a>
             <a href="#">
               <div>
-                <h3 class="per">-37%</h3>
+                <h3 class="per"></h3>
                 <h1 class="tenis"><img src="imagens/984844IJ.avif" alt="" width="130px" height="130px"></h1>
                 <h2 class="lancamento">Lançamento</h2>
                 <p class="nome-produto">Conjunto de Agasalho Oxer Feminino</p>
@@ -138,7 +138,7 @@
             <a href="#">
               
               <div>
-                <h3 class="per">-28%</h3>
+                <h3 class="per"></h3>
                   <h1 class="tenis"><img src="imagens/olimpicos.avif" alt="" width="130px" height="130px"></h1>
                   <h2 class="lancamento">Lançamento</h2>
                   <p class="nome-produto">Tênis Olympikus Flit 3 - Feminino</p>
@@ -150,9 +150,17 @@
               </div>
             </a>
 
-            <div>
-
-            </div>
+            <a href="">
+              <div>
+                <h3 class="per"></h3>
+                  <h1 class="tenis"><img src="imagens/bola.avif" alt="" width="130px" height="130px"></h1>
+                  <p class="nome-produto">Bola de Futebol Adams Classic - Adulto</p>
+                  <p class="preco-antigo">R$ 69,99</p>
+                  <p class="precos">R$ 35,99 no Pix</p>
+                  <p class="parcelado"> ou 1x de R$ 39,99</p>
+                  <p id="unica">Cor única</p>
+              </div>
+            </a>
 
             <div>
 
@@ -180,7 +188,32 @@
             
           </div>
     </main>
+    <script>
+      
+      let tenis = document.getElementsByClassName("tenis");
+      for(let b = 0;b<tenis.length;b++){
+      
+      let precoAntigo = document.getElementsByClassName("preco-antigo").item(b);
+      let preco = document.getElementsByClassName("precos").item(b);
+      let percentual = document.getElementsByClassName("per").item(b);
+      
+      let textPrecoAntigo = precoAntigo.textContent;
+      let i = textPrecoAntigo.trim().lastIndexOf("$");
+      let nTextPrecoAntigo = textPrecoAntigo.substring(i+1);
+      
+      let textPreco = preco.textContent;
+      let j = textPreco.trim().lastIndexOf("$");
+      let ult = textPreco.trim().lastIndexOf("n")
+      let nTextPreco = textPreco.substring(j+1,ult);
+      
+      let parseado1 = Number.parseInt(nTextPreco)+1;
+      let parseado2 = Number.parseInt(nTextPrecoAntigo)+1;
+      
+      let desconto = 100 - parseado1/parseado2 * 100 
+      percentual.textContent = "-" + desconto.toFixed(0) + "%"
+    }
     
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
